@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * 长度实体
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
