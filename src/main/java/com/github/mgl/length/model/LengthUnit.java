@@ -2,7 +2,7 @@ package com.github.mgl.length.model;
 
 public enum LengthUnit {
   MILE {
-    private final int MILE_UNIT_LENGTH = 1760 * 3 * 12 * 1;
+    private static final int MILE_UNIT_LENGTH = 1760 * 3 * 12 * 1;
 
     public int getLengthByUnit() {
       return MILE_UNIT_LENGTH;
@@ -16,7 +16,7 @@ public enum LengthUnit {
     }
   },
   FEET {
-    private final int FEET_UNIT_LENGTH = 12 * 1;
+    private static final int FEET_UNIT_LENGTH = 12 * 1;
 
     public int getLengthByUnit() {
       return FEET_UNIT_LENGTH;
