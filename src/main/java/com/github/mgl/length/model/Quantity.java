@@ -2,10 +2,10 @@ package com.github.mgl.length.model;
 
 public class Quantity {
 
-  private String unit;
+  private LengthUnit unit;
   private int amount;
 
-  public Quantity(int amount, String unit) {
+  public Quantity(int amount, LengthUnit unit) {
     this.amount = amount;
     this.unit = unit;
   }
@@ -13,11 +13,15 @@ public class Quantity {
   @Override
   public boolean equals(Object obj) {
     Quantity quantity = (Quantity) obj;
-    return this.amount == quantity.amount && this.unit.equals(quantity.unit);
+    return this.getQuantity() == quantity.getQuantity();
   }
 
   @Override
   public int hashCode() {
     return super.hashCode();
+  }
+
+  private int getQuantity() {
+    return amount * unit.getLengthByUnit();
   }
 }
