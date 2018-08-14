@@ -1,4 +1,4 @@
-package com.github.mgl.length;
+package com.github.mgl.length.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,4 @@ public class Length {
   private int length;
   private LengthUnit lengthUnit;
 
-  public Length mile(int length) {
-    return new Length(length, LengthUnit.MILE);
-  }
 }

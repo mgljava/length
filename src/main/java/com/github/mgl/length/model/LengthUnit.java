@@ -1,4 +1,4 @@
-package com.github.mgl.length;
+package com.github.mgl.length.model;
 
 public enum LengthUnit {
   MILE {

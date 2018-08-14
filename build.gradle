@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 group 'com.github.mgl'
@@ -17,7 +18,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.0'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.0.4.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-test:2.0.4.RELEASE'
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.2.0"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:5.2.0"
     testImplementation 'org.mockito:mockito-junit-jupiter:2.21.0'
@@ -33,3 +34,64 @@ checkstyle {
         source = 'src/main/java'
     }
 }
+
+test {
+    testLogging {
+        events 'PASSED', 'FAILED', 'SKIPPED'
+    }
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        html.enabled = true
+        xml.enabled = false
+        csv.enabled = false
+    }
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(
+                    dir: it,
+                    exclude: [
+                            '**/HelloWorld.class',
+                            '**/model/*.class'
+                    ]
+            )
+        })
+    }
+}
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            excludes = [
+                    '**.HelloWorld',
+                    '**.model.*'
+            ]
+
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+            limit {
+                counter = 'METHOD'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+            limit {
+                counter = 'CLASS'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+        }
+    }
+    dependsOn(jacocoTestReport)
+}
+
+check.dependsOn jacocoTestCoverageVerification
