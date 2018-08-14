@@ -35,6 +35,12 @@ checkstyle {
     }
 }
 
+copy {
+    from "./config/githooks/"
+    into "./.git/hooks/"
+    fileMode 0755
+}
+
 test {
     testLogging {
         events 'PASSED', 'FAILED', 'SKIPPED'
