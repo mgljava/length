@@ -62,4 +62,26 @@ public class QuantityTest {
     // then
     assertThat(result).isFalse();
   }
+
+  @Test
+  void should_1_yard_equals_to_3_feet() {
+    // given
+
+    // when
+    boolean result = new Quantity(1, LengthUnit.YARD).equals(new Quantity(3, LengthUnit.FEET));
+
+    // then
+    assertThat(result).isTrue();
+  }
+
+  @Test
+  void should_1_feet_equals_to_12_inch() {
+    // given
+
+    // when
+    boolean result = new Quantity(1, LengthUnit.FEET).equals(new Quantity(12, LengthUnit.INCH));
+
+    // then
+    assertThat(result).isTrue();
+  }
 }
