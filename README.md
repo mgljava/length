@@ -9,9 +9,9 @@
 3. 有测试并覆盖率不得低于80%。
 
 ##### 第一步：分析对象属性和行为
-Class: Quantity
+Class: Length
 - Properties:
-  * amount
+  * length
   * unit
 Behaive:
   * equals
