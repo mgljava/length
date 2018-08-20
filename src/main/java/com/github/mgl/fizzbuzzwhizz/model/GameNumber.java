@@ -1,4 +1,4 @@
-package com.github.mgl.fizz_buzz_whizz;
+package com.github.mgl.fizzbuzzwhizz.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
