@@ -13,7 +13,7 @@ public class Length {
   @Override
   public boolean equals(Object obj) {
     Length length = (Length) obj;
-    return this.getQuantity() == length.getQuantity();
+    return this.getLength() == length.getLength();
   }
 
   @Override
@@ -21,7 +21,7 @@ public class Length {
     return super.hashCode();
   }
 
-  private int getQuantity() {
+  private int getLength() {
     return length * unit.getLengthByUnit();
   }
 }
