@@ -8,17 +8,19 @@ import org.junit.Test;
 
 public class FizzBuuWhizzTest {
 
-  FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+  FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz(); // setup
 
   private final GameNumber gameNumber = new GameNumber(3, 5, 7);
+
+
 
   @Test
   public void should_get_fizz() {
     // given
     String result;
-    result = fizzBuzzWhizz.getResultByNumber(3, gameNumber);
 
     // when
+    result = fizzBuzzWhizz.getResultByNumber(3, gameNumber);
 
     // then
     assertEquals("Fizz", result);
@@ -28,9 +30,9 @@ public class FizzBuuWhizzTest {
   public void should_get_buzz() {
     // given
     String result;
-    result = fizzBuzzWhizz.getResultByNumber(5, gameNumber);
 
     // when
+    result = fizzBuzzWhizz.getResultByNumber(5, gameNumber);
 
     // then
     assertEquals("Buzz", result);
@@ -38,10 +40,11 @@ public class FizzBuuWhizzTest {
 
   @Test
   public void should_get_whizz() {
-    // given
+    // given 不存在变量定义（放参数）
     String result;
-    result = fizzBuzzWhizz.getResultByNumber(7, gameNumber);
+
     // when
+    result = fizzBuzzWhizz.getResultByNumber(7, gameNumber);
 
     // then
     assertEquals("Whizz", result);

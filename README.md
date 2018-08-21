@@ -44,3 +44,28 @@ Behaive:
 * 1 Feet == 12 Inch
 * 当用Feet为单位表示长度时，精度为1 Feet
 * 当用Inch为单位表示长度时，精度为1 Inch
+
+// ----------------------------------------------------------------------  
+Hi there,
+
+为了快速掌握Esprit上使用的技术，为你们制定了一个月的学习计划，今天下午我们一起kick off一下：
+第一周
+
+读书笔记《代码整洁之道》第1~2章。
+学习并了解OO-Bootcamp材料。
+练习TDD第一题：Length（不强调必须TDD），讲解。
+课后作业：fizz-buzz-whizz。
+第二周
+
+读书笔记《代码整洁之道》第9~10章。
+练习TDD第二题：guess-number，讲解（加入一些最佳实践，guava，reactor，apache tools等）。
+课后作业：taxi。
+第三周
+
+读书笔记《重构》第1~3章。
+练习TDD模式下开发GraphQL CRUD，讲解（加入CI，spring等）。
+课后作业：GraphQL题。
+第四周
+
+读书笔记《重构》第4~6章。
+贴近真实项目架构GraphQL+Reactor+MapStruct+TDD。
